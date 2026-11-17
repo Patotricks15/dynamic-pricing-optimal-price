@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dp-pricing"
+version = "0.1.0"
+description = "Profit-maximising price under constant elasticity within an observed price band."
+requires-python = ">=3.12"
+dependencies = [
+    "dp-elasticity @ git+https://github.com/Patotricks15/dynamic-pricing-elasticity@v0.1.0",
+    "pandas==2.3.3",
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "matplotlib==3.10.3",
+    "seaborn==0.13.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.4.1",
+    "jupytext==1.17.2",
+    "nbconvert==7.16.6",
+    "ipykernel==6.29.5",
+    "nbformat==5.10.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
